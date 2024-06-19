@@ -11,9 +11,8 @@ const ItemQuantity = () => {
 
     const handleIncrement = () => {
         setVal(prev => prev += 1)
-
-
     }
+    
     const handleDecrement = useCallback(() => {
         setVal((prev) => {
             if (prev !== 0) {

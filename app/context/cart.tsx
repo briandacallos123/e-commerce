@@ -54,12 +54,11 @@ const CartProvider = ({ children }: {
 }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    console.log(state,'STATEEEE')
     useEffect(()=>{
         if(state?.cart?.length){
             localStorage.setItem('cart',JSON.stringify(state))
         }
-    },[state?.cart])
+    },[state?.cart, state])
 
     useEffect(()=>{
       let cartLocal:any = localStorage.getItem('cart');

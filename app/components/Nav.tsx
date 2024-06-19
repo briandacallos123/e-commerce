@@ -16,11 +16,11 @@ const Nav = () => {
 
     const openCart = useCallback(()=>{
         setCartOpen(true)
-    },[cartOpen])
+    },[])
 
     const closeModal = useCallback(()=>{
         setCartOpen(false)
-    },[cartOpen])
+    },[])
 
     const handleResize = () => {
         const w = window.innerWidth;
@@ -81,7 +81,7 @@ const Nav = () => {
                     <ul className="menu p-4 min-h-full bg-base-200 text-base-content w-[70%] ">
 
                         {links?.map((item: string) => (
-                            <li>
+                            <li key={item}>
                                 <a href="#" className="text-black text-sm">{item}</a>
                             </li>
                         ))}
@@ -103,7 +103,7 @@ const Nav = () => {
                         <ul tabIndex={0} className=" flex items-center space-x-5">
 
                             {links?.map((item: string) => (
-                                <li>
+                                <li key={item}>
                                     <a href="#" className="text-gray-500">{item}</a>
                                 </li>
                             ))}

@@ -18,7 +18,7 @@ const Lightbox = ({ images }: LightboxProps) => {
     useEffect(() => {
         const thumbnail: any = getActiveImage()
         setThumbnail(thumbnail)
-    }, [dataImages])
+    }, [getActiveImage])
 
     const handlePrev = useCallback(() => {
         let newImages = [...dataImages];
@@ -51,7 +51,7 @@ const Lightbox = ({ images }: LightboxProps) => {
         }
 
         setDataImages(newImages)
-    }, [])
+    }, [dataImages])
 
 
 
@@ -88,7 +88,7 @@ const Lightbox = ({ images }: LightboxProps) => {
        })
 
        setDataImages(newData)
-    },[])
+    },[dataImages])
 
     return (
         <div>
